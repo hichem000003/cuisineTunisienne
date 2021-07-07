@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EvenementRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -56,6 +58,16 @@ class Evenement
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $statut;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Participation::class, mappedBy="Evenement", orphanRemoval=true)
+     */
+    private $participations;
+
+    public function __construct()
+    {
+        $this->participations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -154,6 +166,36 @@ class Evenement
     public function setStatut(?string $statut): self
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Participation[]
+     */
+    public function getParticipations(): Collection
+    {
+        return $this->participations;
+    }
+
+    public function addParticipation(Participation $participation): self
+    {
+        if (!$this->participations->contains($participation)) {
+            $this->participations[] = $participation;
+            $participation->setEvenement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipation(Participation $participation): self
+    {
+        if ($this->participations->removeElement($participation)) {
+            // set the owning side to null (unless already changed)
+            if ($participation->getEvenement() === $this) {
+                $participation->setEvenement(null);
+            }
+        }
 
         return $this;
     }

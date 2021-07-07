@@ -27,6 +27,12 @@ class Participation
      */
     private $statut;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Evenement::class, inversedBy="participations")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $Evenement;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +58,18 @@ class Participation
     public function setStatut(?string $statut): self
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    public function getEvenement(): ?Evenement
+    {
+        return $this->Evenement;
+    }
+
+    public function setEvenement(?Evenement $Evenement): self
+    {
+        $this->Evenement = $Evenement;
 
         return $this;
     }
