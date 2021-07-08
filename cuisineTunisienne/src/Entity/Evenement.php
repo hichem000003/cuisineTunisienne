@@ -22,7 +22,7 @@ class Evenement
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nomEvenement;
+     private $nomEvenement;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
