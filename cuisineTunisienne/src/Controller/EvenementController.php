@@ -18,7 +18,7 @@ class EvenementController extends AbstractController
     /**
      * @Route("/", name="evenement_index", methods={"GET"})
      */
-    public function index(EvenementRepository $evenementRepository): Response
+    /**public function index(EvenementRepository $evenementRepository): Response
     {
         $objects=$evenementRepository->findAll();
         $encoders=$arrayName = array(new jsonEncoder());
@@ -26,7 +26,7 @@ class EvenementController extends AbstractController
         $data=$serializer->($objects,'json');
         $response = new Response($data,200);
         return $response;
-    }
+    }*/
 
     /**
      * @Route("/new", name="evenement_new", methods={"GET","POST"})
