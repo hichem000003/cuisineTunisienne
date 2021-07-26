@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
 use App\Entity\Chef;
-use App\Controller\Request;
 
 class ChefController extends AbstractController
 {
@@ -23,7 +23,7 @@ class ChefController extends AbstractController
         ]);
     }
 	/**
-	* @Route("/chefs", name="listchefs" methods={"GET"})
+	* @Route("/chefs", name="listchefs", methods={"GET"})
 	*/
 	public function getAllChefs(SerializerInterface $serializer): Response
 	{
@@ -33,7 +33,7 @@ class ChefController extends AbstractController
 	}
 	
 	/**
-	* @Route("/chefs/{id}", name="chef" methods={"GET"})
+	* @Route("/chefs/{id}", name="chef", methods={"GET"})
 	*/
 	public function getChef($id,SerializerInterface $serializer): Response
 	{
@@ -43,8 +43,8 @@ class ChefController extends AbstractController
 	}
 	
 	/**
-	* @Route("/chef", name="addChef", methods="{POST}")
-	
+	* @Route("/chef", name="addChef", methods={"POST"})
+	*/
 	public function addChef(Request $request,SerializerInterface $serializer): Response 
 	{
 		//récupérer le contenu de la requête envoyé
@@ -55,10 +55,10 @@ class ChefController extends AbstractController
 		$em->flush();
 		$jsonContent = $serializer->serialize($chef,"json");
 		return new Response($jsonContent);
-	}*/
+	}
 	
 	/**
-	* @Route("/chef/{id}", name="deleteChef", methods="{DELETE}")
+	* @Route("/chef/{id}", name="deleteChef", methods={"DELETE"})
 	*/
 	public function deleteChef($id, SerializerInterface $serializer): Response
 	{
@@ -69,4 +69,19 @@ class ChefController extends AbstractController
 		$jsonContent = $serializer->serialize($chef,"json");
 		return new Response($jsonContent);
 	}
+	
+	/**
+	* @Route("/chef/{id}", name="updateChef", methods={"PUT"})
+	*/
+	public function updateChef($id, SerializerInterface $serializer, Request $request): Response
+    {
+		$data=$request->getContent();
+		$chef = $serializer->deserialize($data, Chef::class, 'json');
+		$chef->setId($id);
+		$entityManager = $this->getDoctrine()->getManager();
+        $entityManager->merge($chef);
+        $entityManager->flush();
+		$jsonContent = $serializer->serialize($chef,"json");
+        return new Response($jsonContent);
+    }
 }
