@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/cuisineTunisienne/src" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/cuisineTunisienne/tests" isTestSource="true" packagePrefix="App\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/friendsofphp/proxy-manager-lts" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/http-client-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/doctrine-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/config" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/proxy-manager-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/maker-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/flex" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/migrations" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/doctrine-migrations-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/framework-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/dotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/web-server-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/validator" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/property-access" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/polyfill-intl-icu" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/options-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/twig-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/security-csrf" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/security-core" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/intl" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/twig-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/form" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/symfony/property-info" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/cuisineTunisienne/vendor/phpdocumentor/type-resolver" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
