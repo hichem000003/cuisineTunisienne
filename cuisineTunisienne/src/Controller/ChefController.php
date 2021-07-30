@@ -13,7 +13,6 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use App\Entity\Chef;
 use App\Repository\AbonnementRepository;
-use OpenApi\Annotations as OA;
 
 
 class ChefController extends AbstractController
@@ -30,13 +29,6 @@ class ChefController extends AbstractController
     }
 	/**
 	* @Route("/chefs", name="listchefs", methods={"GET"})
-	* @OA\Get(
-     *     path="/chefs",
-     *     summary="Get chefs",
-     *     description="Get chefs",
-     *     operationId="listchefs",
-     *     produces={"application/json"}
-     * )
 	*/
 	public function getAllChefs(SerializerInterface $serializer): Response
 	{
