@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use App\Repository\AbonnementRepository;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+
+
 
 /**
  * @ORM\Entity(repositoryClass=AbonnementRepository::class)
@@ -23,17 +26,19 @@ class Abonnement
     private $numAbonnement;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $dateAbonnement;
 
     /**
      * @ORM\ManyToOne(targetEntity=Chef::class, inversedBy="abonnements")
+	 * @Serializer\Exclude()
      */
     private $chef;
 
     /**
      * @ORM\ManyToOne(targetEntity=Membre::class, inversedBy="abonnements")
+	 * @Serializer\Exclude()
      */
     private $membre;
 
@@ -41,6 +46,14 @@ class Abonnement
     {
         return $this->id;
     }
+	
+	public function setId(?int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
 
     public function getNumAbonnement(): ?int
     {
@@ -54,12 +67,12 @@ class Abonnement
         return $this;
     }
 
-    public function getDateAbonnement(): ?\DateTimeInterface
+    public function getDateAbonnement(): ?string
     {
         return $this->dateAbonnement;
     }
 
-    public function setDateAbonnement(?\DateTimeInterface $dateAbonnement): self
+    public function setDateAbonnement(?string $dateAbonnement): self
     {
         $this->dateAbonnement = $dateAbonnement;
 
@@ -89,4 +102,26 @@ class Abonnement
 
         return $this;
     }
+	
+	/**
+     * @Serializer\VirtualProperty()
+	 * @Serializer\SerializedName("chef")
+     */
+	public function getIdOfChef()
+	{
+		return $this->getChef()->getId();
+	}
+	
+	/**
+     * @Serializer\VirtualProperty()
+	 * @Serializer\SerializedName("membre")
+     */
+	public function getIdOfMembre()
+	{
+		$id = $this->getMembre();
+		if($id == null){
+			return null;
+		}
+		return $id->getId();
+	}
 }

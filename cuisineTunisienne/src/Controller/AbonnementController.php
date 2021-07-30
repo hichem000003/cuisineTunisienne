@@ -9,9 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+use JMS\Serializer\Annotation\VirtualProperty;
 
 use App\Repository\MembreRepository;
 use App\Repository\ChefRepository;
+
 
 use App\Entity\Abonnement;
 
@@ -33,11 +37,8 @@ class AbonnementController extends AbstractController
 	public function getAllAbonnements(SerializerInterface $serializer): Response
 	{
 		$lista=$this->getDoctrine()->getRepository(Abonnement::class)->findAll();
-		$jsonContent = $serializer->serialize($lista, 'json', [
-			'circular_reference_handler' => function ($object) {
-				return $object->getId();
-			}
-		]);		return new Response($jsonContent);
+		$jsonContent = $serializer->serialize($lista, 'json',[AbstractNormalizer::IGNORED_ATTRIBUTES => ['chef','membre']]);		
+		return new Response($jsonContent);
 	}
 	
 	/**
@@ -57,19 +58,55 @@ class AbonnementController extends AbstractController
 	/**
 	* @Route("/abonnement", name="addAbonnement", methods={"POST"})
 	*/
-	public function addAbonnement(Request $request,SerializerInterface $serializer, MembreRepository $membreRepository, ChefRepository $chefRepository): Response 
+	public function addAbonnement(Request $request,MembreRepository $membreRepository, ChefRepository $chefRepository): Response 
 	{
 		$data=$request->getContent();
 		$dataJson = json_decode($request->getContent(), true);
+		$encoder = new JsonEncoder();
+		$defaultContext = [
+			AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object, $format, $context) {
+			return $object->getId();
+		},
+		];
+		$normalizer = new ObjectNormalizer(null, null, null, null, null, null, $defaultContext);
+		$serializer = new Serializer([$normalizer], [$encoder]);
 		$abonnement = $serializer->deserialize($data, Abonnement::class, 'json',[AbstractNormalizer::IGNORED_ATTRIBUTES => ['dateAbonnement','chef','membre']]);
 		$em=$this->getDoctrine()->getManager();
-		//$membre=$membreRepository->find($dataJson['membre']);
+		$membre=$membreRepository->find($dataJson['membre']);
 		$chef=$chefRepository->find($dataJson['chef']);
-		//$dateImmutable = \DateTime::createFromFormat('Y-m-d H:i:s', $abonnement->getDateAbonnement());
-		$abonnement->setDateAbonnement(new \DateTime($abonnement->getDateAbonnement()));
+		$abonnement->setDateAbonnement(date('Y-m-d H:i:s'));
         $abonnement->setChef($chef);                    
-        //$abonnement->setMembre($membre);
+        $abonnement->setMembre($membre);
 		$em->persist($abonnement);
+		$em->flush();
+		$jsonContent = $serializer->serialize($abonnement,"json");
+		return new Response($jsonContent);
+	}
+	
+	/**
+	* @Route("/abonnement/{id}", name="updateAbonnement", methods={"PUT"})
+	*/
+	public function updateAbonnement($id, Request $request,MembreRepository $membreRepository, ChefRepository $chefRepository): Response 
+	{
+		$data=$request->getContent();
+		$dataJson = json_decode($request->getContent(), true);
+		$encoder = new JsonEncoder();
+		$defaultContext = [
+			AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object, $format, $context) {
+			return $object->getId();
+		},
+		];
+		$normalizer = new ObjectNormalizer(null, null, null, null, null, null, $defaultContext);
+		$serializer = new Serializer([$normalizer], [$encoder]);
+		$abonnement = $serializer->deserialize($data, Abonnement::class, 'json',[AbstractNormalizer::IGNORED_ATTRIBUTES => ['dateAbonnement','chef','membre']]);
+		$em=$this->getDoctrine()->getManager();
+		$membre=$membreRepository->find($dataJson['membre']);
+		$chef=$chefRepository->find($dataJson['chef']);
+		$abonnement->setId($id);
+		$abonnement->setDateAbonnement(date('Y-m-d H:i:s'));
+        $abonnement->setChef($chef);                    
+        $abonnement->setMembre($membre);
+		$em->merge($abonnement);
 		$em->flush();
 		$jsonContent = $serializer->serialize($abonnement,"json");
 		return new Response($jsonContent);
