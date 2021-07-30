@@ -14,6 +14,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use App\Entity\Chef;
 use App\Repository\AbonnementRepository;
 
+
 class ChefController extends AbstractController
 {
     /**
@@ -32,7 +33,11 @@ class ChefController extends AbstractController
 	public function getAllChefs(SerializerInterface $serializer): Response
 	{
 		$listc=$this->getDoctrine()->getRepository(Chef::class)->findAll();
-		$jsonContent = $serializer->serialize($listc,"json");
+		$jsonContent = $serializer->serialize($listc,"json", [
+			'circular_reference_handler' => function ($object) {
+				return $object->getId();
+			}
+		]);
 		return new Response($jsonContent);
 	}
 	
