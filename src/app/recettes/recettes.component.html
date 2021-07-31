@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>Chicken Recipes</h3>
+                        <h3> Lists Recettes</h3>
                     </div>
                 </div>
             </div>
@@ -29,174 +29,50 @@
     <div class="recepie_area plus_padding">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let recette of recettes">
                     <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="assets/img/recepie/recpie_1.png" alt="">
-                        </div>
-                        <h3>Egg Manchurian</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
+
+                        <h3>{{recette.nomRecette}}</h3>
+
+                        <p>Temps de préparation :{{recette.tempsPreparation}}</p>
+                        <p>Temps de Cuisson :{{recette.tempsCuisson}}</p>
+                        <p>Nombre de personnes :{{recette.nbPersonnes}}</p>
+
+                      <a [routerLink]="['/recetteDetails/',recette.id]" class="line_btn">Plus de détails</a>
+                     <!--<a routerLink="/recetteDetails" routerLinkActive="active" class="line_btn">la recette en détails</a>--> <br>
+
+
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="assets/img/recepie/recpie_2.png" alt="">
-                        </div>
-                        <h3>Pure Vegetable Bowl</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="assets/img/recepie/recpie_3.png" alt="">
-                        </div>
-                        <h3>Egg Masala Ramen</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
+
+
+
+
+
+                <div class="row">
+                  <div class="col-xl-4 col-lg-4 col-md-6    col-push-6" >
+
+                     <a class="line_btn" routerLink="/addRecette" routerLinkActive="active">Ajouter</a>
+
+</div>
+
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="img/recepie/recpie_1.png" alt="">
-                        </div>
-                        <h3>Egg Manchurian</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
+
+
+
+
+
+
+
+
+
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="img/recepie/recpie_2.png" alt="">
-                        </div>
-                        <h3>Pure Vegetable Bowl</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="img/recepie/recpie_3.png" alt="">
-                        </div>
-                        <h3>Egg Masala Ramen</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="assets/img/recepie/recpie_1.png" alt="">
-                        </div>
-                        <h3>Egg Manchurian</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="assets/img/recepie/recpie_2.png" alt="">
-                        </div>
-                        <h3>Pure Vegetable Bowl</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="assets/img/recepie/recpie_3.png" alt="">
-                        </div>
-                        <h3>Egg Masala Ramen</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- /recepie_area_start  -->
 
-    <!-- latest_trand     -->
-    <div class="latest_trand_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="trand_info text-center">
-                        <p>Thousands of recipes are waiting to be watched</p>
-                        <h3>Discover latest trending recipes</h3>
-                        <a href="#" class="boxed-btn3">View all Recipes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ latest_trand     -->
 
-    <!-- download_app_area -->
-    <div class="download_app_area plus_padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-md-6">
-                    <div class="download_thumb">
-                        <div class="big_img">
-                            <img src="assets/img/video/big_1.png" alt="">
-                        </div>
-                        <div class="small_01">
-                            <img src="assets/img/video/small_sm1.png" alt="">
-                        </div>
-                        <div class="small_02">
-                            <img src="assets/img/video/sm2.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-md-6">
-                    <div class="download_text">
-                        <h3>Download app to
-                            get recipes from
-                            Everywhere</h3>
-                        <div class="download_android_apple">
-                            <a class="active" href="#">
-                                <div class="download_link d-flex">
-                                    <i class="fa fa-apple"></i>
-                                    <div class="store">
-                                        <h5>Available</h5>
-                                        <p>on App Store</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="download_link d-flex">
-                                    <i class="fa fa-android"></i>
-                                    <div class="store">
-                                        <h5>Download</h5>
-                                        <p>from Play Store</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ download_app_area -->
 
 
 

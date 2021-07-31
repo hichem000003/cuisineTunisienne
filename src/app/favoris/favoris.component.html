@@ -1,0 +1,48 @@
+
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Mes Recettes favoris</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /bradcam_area  -->
+
+      <!--li class="nav-item">
+        <a routerLink="add" class="nav-link" routerLinkActive="active">Ajouter avis</a>
+    </li-->
+
+    <div class="section-top-border container ">
+      <h3 class="mb-30">Table</h3>
+      <div class="table-wrap">
+        <div class="progress-table">
+          <div class="table-head">
+            <div class="serial">#</div>
+            <div class="country">Numero de Favoris</div>
+            <div class="visit">Date De Publication</div>
+            <div class="visit">Action</div>
+          </div>
+          <div *ngFor="let favori of favoris" class="table-row">
+            <div class="serial">{{favori.recette.nomRecette}}</div>
+            <div class="country"> <!--img src="assets/img/elements/f1.jpg" alt="flag"-->{{favori.num}} </div>
+            <div class="visit">{{favori.datePublication}} </div>
+
+              <div class="favori">
+                <button (click)="delete(favori)" class="btn btn-danger">Supprimer</button>
+
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+

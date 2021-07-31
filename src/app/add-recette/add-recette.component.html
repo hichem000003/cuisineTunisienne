@@ -1,0 +1,84 @@
+
+
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+
+    <!-- header-end -->
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3> Ajouter une Recette</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /bradcam_area  -->
+
+
+
+
+<br><br><br>
+
+
+
+<form  [formGroup]="form">
+  <div class="form-group">
+    &nbsp;&nbsp;<label for="nomRecette">Nom Recette: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input  name="nomRecette" size="20" type="text" formControlName="nomRecette" id="nomRecette" />
+</div>
+
+
+<div class="form-group">
+  &nbsp;&nbsp;<label for="refRecette">Reference Recette: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+<input  name="refRecette" size="20" type="text" formControlName="refRecette" id="refRecette" />
+</div>
+<div class="form-group">
+  &nbsp;&nbsp;<label for="tempsCuisson">Temps Cuisson:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+<input  name="tempsCuisson" size="20" type="text"formControlName="tempsCuisson"   id="tempsCuisson" />
+</div>
+<div class="form-group">
+  &nbsp;&nbsp;<label for="tempsPreparation">Temps Preparation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+<input  name="tempsPreparation" size="20" type="text" formControlName="tempsPreparation" id="tempsPreparation" />
+</div>
+
+
+
+<div class="form-group">
+  &nbsp;&nbsp;<label for="niveauDifficulte">Niveau Difficulte:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+<input  name="niveauDifficulte" size="20" type="text" formControlName="niveauDifficulte" id="niveauDifficulte" />
+</div>
+
+<div class="form-group">
+  &nbsp;&nbsp;<label for="nbPersonnes">Nombre Personnes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+<input  name="nbPersonnes" size="20" type="text" formControlName="nbPersonnes" id="nbPersonnes" />
+</div>
+
+<div class="form-group">
+  &nbsp;&nbsp;<label for="categories">Categorie: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input  name="categories" size="20" type="text" formControlName="categories" id="categories" />
+</div>
+<button class="btn btn-primary"  (click)="Ajouter()">Ajouter Recette</button><br><br><br><br>
+</form>
+
+
+
+
+
+
+</body>
+
+</html>

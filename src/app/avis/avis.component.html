@@ -1,0 +1,39 @@
+<div class="comments-area container">
+  <h4>05 Comments</h4>
+
+  <div class="comment-list container" *ngFor="let avi of avis">
+     <div class="single-comment justify-content-between d-flex">
+        <div class="user justify-content-between d-flex">
+           <div class="thumb">
+              <img src="assets/img/comment/comment_2.png" alt="">
+           </div>
+           <div class="desc">
+            <li><p><strong>Note</strong> : <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> </p></li>
+            <p class="comment">
+              {{avi.titre}}
+            </p>
+            <p class="comment">
+                {{avi.contenuCommentaire}}
+              </p>
+              <div class="d-flex justify-content-between">
+                 <div class="d-flex align-items-center">
+                    <h5>
+                       <a href="#">{{avi.membre.nom}}  </a>
+                       <a href="#">{{avi.membre.prenom}}</a>
+                    </h5>
+                    <p class="date">  {{avi.dateCommentaire}} </p>
+                 </div>
+                 <div class="reply-btn">
+                  <button class="btn-reply text-uppercase" data-toggle="modal" data-target="#myModal1">Modifier</button>
+               </div>
+                 <div class="reply-btn">
+                  <button (click)="delete(avi)" class="btn-reply text-uppercase">Supprimer</button>
+
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+
+</div>

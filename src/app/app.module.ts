@@ -9,6 +9,14 @@ import { RecettesComponent } from './recettes/recettes.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { DetailsrecetteComponent } from './detailsrecette/detailsrecette.component';
 import { EvenementComponent } from './evenement/evenement.component';
+import { FavorisComponent } from './favoris/favoris.component';
+import
+{HttpClientModule}from'@angular/common/http';
+import { AvisComponent } from './avis/avis.component';
+import { AddRecetteComponent } from './add-recette/add-recette.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DeleteRecetteComponent } from './delete-recette/delete-recette.component'
+
 
 @NgModule({
   declarations: [
@@ -18,11 +26,19 @@ import { EvenementComponent } from './evenement/evenement.component';
     RecettesComponent,
     AccueilComponent,
     DetailsrecetteComponent,
-    EvenementComponent
+    EvenementComponent,
+    FavorisComponent,
+    AvisComponent,
+    AddRecetteComponent,
+    DeleteRecetteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+  HttpClientModule,
+    FormsModule ,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
